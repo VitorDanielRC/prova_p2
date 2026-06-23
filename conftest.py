@@ -26,7 +26,7 @@ TestingSessionLocal = sessionmaker(
 
 @pytest.fixture()
 def client() -> Generator[TestClient, None, None]:
-    """Cria as tabelas antes e remove tudo depois de cada teste."""
+  
     Base.metadata.drop_all(bind=test_engine)
     Base.metadata.create_all(bind=test_engine)
 
